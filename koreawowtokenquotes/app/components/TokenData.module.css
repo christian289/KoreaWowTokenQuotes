@@ -1,0 +1,36 @@
+.container {
+  background-color: #000000;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #FFD700;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.dataContainer {
+  background-color: rgba(255, 215, 0, 0.1);
+  border: 2px solid #FFD700;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.data {
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #FFD700;
+}

@@ -19,8 +19,19 @@ builder.Services.Configure<BattleNetWoWTokenApiRequiredValue>(builder.Configurat
 builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 builder.Configuration.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowNextJS", builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
+app.UseCors("AllowNextJS");
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseHttpsRedirection();
