@@ -531,3 +531,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+koreawowtokenquotes.server/appsettings.Development.json
