@@ -11,6 +11,6 @@ public record BattlenetAccessToken()
     [JsonPropertyName("expires_in")]
     public int ExpiresIn { get; init; }
 
-    [JsonPropertyName("scope")]
-    public required string Scope { get; init; }
+    [JsonPropertyName("sub")]
+    public required string Sub { get; init; }
 }
