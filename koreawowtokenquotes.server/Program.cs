@@ -14,7 +14,7 @@ builder.Services.AddHttpClient<ITokenService, TokenService>();
 builder.Services.AddHttpClient();
 
 builder.Services.Configure<BattleNetAuth>(builder.Configuration.GetSection(nameof(BattleNetAuth)));
-builder.Services.Configure<BattleNetRequiredValue>(builder.Configuration.GetSection(nameof(BattleNetRequiredValue)));
+builder.Services.Configure<BattleNetWoWTokenApiRequiredValue>(builder.Configuration.GetSection(nameof(BattleNetWoWTokenApiRequiredValue)));
 
 builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 builder.Configuration.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true);
@@ -43,6 +43,7 @@ app.MapGet("/api/token-data", async ([FromServices] IHttpClientFactory httpClien
         {
             Query = new QueryBuilder
             {
+                { "region", "kr" },
                 { "namespace", "dynamic-kr" },
                 { "locale", "ko_KR" }
             }.ToString()
