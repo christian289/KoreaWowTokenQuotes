@@ -18,10 +18,17 @@
 
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
+COPY ["./koreawowtokenquotes.server.interfaces/koreawowtokenquotes.server.interfaces.csproj", "koreawowtokenquotes.server.interfaces/"]
+WORKDIR /src/koreawowtokenquotes.server.interfaces
+RUN dotnet restore
+WORKDIR /src
+COPY ["./koreawowtokenquotes.server/koreawowtokenquotes.server.csproj", "koreawowtokenquotes.server/"]
+WORKDIR /src/koreawowtokenquotes.server
+RUN dotnet restore
+WORKDIR /src
 COPY ./koreawowtokenquotes.server/ koreawowtokenquotes.server/
 COPY ./koreawowtokenquotes.server.interfaces/ koreawowtokenquotes.server.interfaces/
 WORKDIR /src/koreawowtokenquotes.server
-RUN dotnet restore
 RUN dotnet publish -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
