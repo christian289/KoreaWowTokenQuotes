@@ -1,4 +1,4 @@
-namespace koreawowtokenquotes.server.DTOs.Res;
+namespace koreawowtokenquotes.core.DTOs.Res;
 
 public record BattlenetAccessToken()
 {

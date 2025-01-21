@@ -1,4 +1,4 @@
-namespace koreawowtokenquotes.server.Options;
+namespace koreawowtokenquotes.core.Options;
 
 public class BattleNetAuth
 {

@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\koreawowtokenquotes.server.interfaces\koreawowtokenquotes.server.interfaces.csproj" />
+    <ProjectReference Include="..\koreawowtokenquotes.core\koreawowtokenquotes.core.csproj" />
   </ItemGroup>
 
 </Project>

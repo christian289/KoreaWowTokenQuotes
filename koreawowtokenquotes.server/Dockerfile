@@ -1,6 +1,7 @@
 # DockerFile 위치 -> koreawowtokenquotes.server\Dockerfile
 # docker build 명령어 실행 위치(build context) -> koreawowtokenquotes
 # docker build 명령어 -> docker build -t wow-token-api -f koreawowtokenquotes.server/Dockerfile .
+# docker 컨테이너 실행 명령어 -> docker run -d -p 8080:80 -p 8081:443 --name {컨테이너 이름} {Docker 이미지 이름}
 
 # 이 Dockerfile은 .NET SDK 9.0 docker image를 사용한 build라고 불리는 첫번째 build stage와
 # aspnet 9.0 docker image를 사용한 두번째 build stage로 구분되어 있다.
@@ -18,8 +19,8 @@
 
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
-COPY ["./koreawowtokenquotes.server.interfaces/koreawowtokenquotes.server.interfaces.csproj", "koreawowtokenquotes.server.interfaces/"]
-WORKDIR /src/koreawowtokenquotes.server.interfaces
+COPY ["./koreawowtokenquotes.core/koreawowtokenquotes.core.csproj", "koreawowtokenquotes.core/"]
+WORKDIR /src/koreawowtokenquotes.core
 RUN dotnet restore
 WORKDIR /src
 COPY ["./koreawowtokenquotes.server/koreawowtokenquotes.server.csproj", "koreawowtokenquotes.server/"]
@@ -27,12 +28,14 @@ WORKDIR /src/koreawowtokenquotes.server
 RUN dotnet restore
 WORKDIR /src
 COPY ./koreawowtokenquotes.server/ koreawowtokenquotes.server/
-COPY ./koreawowtokenquotes.server.interfaces/ koreawowtokenquotes.server.interfaces/
+COPY ./koreawowtokenquotes.core/ koreawowtokenquotes.core/
 WORKDIR /src/koreawowtokenquotes.server
 RUN dotnet publish -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
 WORKDIR /app
 COPY --from=build /app/publish .
-EXPOSE 5298
+ENV ASPNETCORE_ENVIRONMENT=Development
+EXPOSE 80
+EXPOSE 443
 ENTRYPOINT ["dotnet", "koreawowtokenquotes.server.dll"]

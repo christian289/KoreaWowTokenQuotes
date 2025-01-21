@@ -5,24 +5,24 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "koreawowtokenquotes.server", "koreawowtokenquotes.server\koreawowtokenquotes.server.csproj", "{9F81AAFE-2C30-47B0-973A-E69C573B1DF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "koreawowtokenquotes.server.interfaces", "koreawowtokenquotes.server.interfaces\koreawowtokenquotes.server.interfaces.csproj", "{AAD5084C-2045-442F-B1EE-80EC1C2238CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "koreawowtokenquotes.core", "koreawowtokenquotes.core\koreawowtokenquotes.core.csproj", "{A0173551-6A7D-4C9D-928C-92A9BBCF5DB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9F81AAFE-2C30-47B0-973A-E69C573B1DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9F81AAFE-2C30-47B0-973A-E69C573B1DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F81AAFE-2C30-47B0-973A-E69C573B1DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F81AAFE-2C30-47B0-973A-E69C573B1DF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AAD5084C-2045-442F-B1EE-80EC1C2238CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AAD5084C-2045-442F-B1EE-80EC1C2238CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AAD5084C-2045-442F-B1EE-80EC1C2238CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AAD5084C-2045-442F-B1EE-80EC1C2238CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0173551-6A7D-4C9D-928C-92A9BBCF5DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0173551-6A7D-4C9D-928C-92A9BBCF5DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0173551-6A7D-4C9D-928C-92A9BBCF5DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0173551-6A7D-4C9D-928C-92A9BBCF5DB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

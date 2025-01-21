@@ -1,4 +1,4 @@
-﻿namespace koreawowtokenquotes.server.interfaces;
+﻿namespace koreawowtokenquotes.core;
 
 public interface ITokenService
 {
